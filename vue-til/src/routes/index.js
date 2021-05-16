@@ -26,6 +26,5 @@ export default new VueRouter({
     },
   ],
 });
-
 // 라우터의 인스턴스가 생성되면서 현재 파일에서 밖으로 나간다. 이게 export의 역할
 // default는 현재 파일에서 하나의 변수 혹은 함수가 나가는 것
