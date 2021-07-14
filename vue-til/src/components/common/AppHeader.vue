@@ -5,12 +5,16 @@
         TIL
       </router-link>
     </div>
+
+    <!-- 로그인 했을 때의 헤더 버튼 분기 처리-->
     <div class="navigations">
+      <!-- 1. 로그인 되었을 때 -->
       <template v-if="isUserLogin">
         <span class="username">{{ $store.state.username }}</span>
         <a href="javascript:;" @click="logoutUser">Logout</a>
       </template>
 
+      <!-- 2. 로그인 안 되었을때 -->
       <template v-else>
         <router-link to="/login">로그인</router-link>
         <router-link to="/signup">회원가입</router-link>
@@ -28,7 +32,7 @@ export default {
   },
   methods: {
     logoutUser() {
-      this.$store.commit('cleaerUsername');
+      this.$store.commit('clearUsername');
       this.$router.push('/login');
     },
   },

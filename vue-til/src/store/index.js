@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   getters: {
     isLogin(state) {
-      return state.username === '' ? false : true;
+      return state.username !== '';
     },
   },
   mutations: {
