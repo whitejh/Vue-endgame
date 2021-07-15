@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { setInterceptors } from './common/interceptors';
 
-// 액시오스 초기화 함수
+// axios 초기화 함수
 // axios.create()는 axios 내부적으로 제공하는 속성
 function createInstance() {
   const instance = axios.create({
@@ -19,11 +19,16 @@ const instance = createInstance();
 // 회원가입 api 요청 메서드
 function registerUser(userData) {
   return instance.post('signup', userData);
-} // 이 방법 추천
+}
 
 // 로그인 api 요청 메서드
 function loginUser(userData) {
   return instance.post('login', userData);
 }
 
-export { registerUser, loginUser };
+// 학습 노트 데이터를 조회하는 api
+function fetchPosts() {
+  return instance.get('posts');
+}
+
+export { registerUser, loginUser, fetchPosts };
